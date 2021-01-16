@@ -1,14 +1,7 @@
-//
-//  DescriptionViewController.swift
-//  iOSArchitecturesDemo
-//
-//  Created by Marat Khanbekov on 15.01.2021.
-//  Copyright © 2021 ekireev. All rights reserved.
-//
 
 import UIKit
 
-class DescriptionViewController: UIViewController {
+class SongDescriptionViewController: UIViewController {
     
     var rootView = DescriptionView()
     
@@ -17,9 +10,9 @@ class DescriptionViewController: UIViewController {
         view = rootView
     }
     
-    var app: ITunesApp
+    var app: ITunesSong
     
-    init(app: ITunesApp) {
+    init(app: ITunesSong) {
         self.app = app
         super.init(nibName: nil, bundle: nil)
     }
@@ -34,7 +27,7 @@ class DescriptionViewController: UIViewController {
     }
     
     func fillData() {
-        rootView.releaseDate.text = app.releaseDate
-        rootView.releaseNote.text = app.releaseNotes
+        rootView.releaseDate.text = "date"
+        rootView.releaseNote.text = "note"
     }
 }

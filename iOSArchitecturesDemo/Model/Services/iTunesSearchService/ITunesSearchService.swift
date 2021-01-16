@@ -43,16 +43,15 @@ final class ITunesSearchService {
         networkManager.dataRequest(request) { [weak self] result in
             
             guard let self = self else {
-                print("Self = nil")
                 
                 completion?(.success([]))
                 return
             }
             
-            print(self)
             
             result
                 .withValue { data in
+                    
                     do {
                         let result = try self.decoder.decode(ITunesSearchResult<ITunesApp>.self, from: data)
                         let apps = result.results
