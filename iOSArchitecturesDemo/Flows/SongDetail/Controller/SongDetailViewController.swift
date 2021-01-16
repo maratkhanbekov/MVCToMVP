@@ -1,21 +1,13 @@
-//
-//  AppDetailViewController.swift
-//  iOSArchitecturesDemo
-//
-//  Created by ekireev on 20.02.2018.
-//  Copyright © 2018 ekireev. All rights reserved.
-//
-
 import UIKit
 
-final class AppDetailViewController: UIViewController {
+final class SongDetailViewController: UIViewController {
     
-    public var app: ITunesApp
+    public var app: ITunesSong
     
-    lazy var headerViewController = AppDetailHeaderViewController(app: self.app)
-    lazy var descriptionViewController = DescriptionViewController(app: self.app)
+    lazy var headerViewController = SongDetailHeaderViewController(app: self.app)
+    lazy var descriptionViewController = SongDescriptionViewController(app: self.app)
     
-    init(app: ITunesApp) {
+    init(app: ITunesSong) {
         self.app = app
         print(app)
         super.init(nibName: nil, bundle: nil)

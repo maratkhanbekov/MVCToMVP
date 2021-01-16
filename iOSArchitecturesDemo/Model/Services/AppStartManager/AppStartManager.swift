@@ -17,25 +17,13 @@ final class AppStartManager {
     }
     
     func start() {
-        
-        
-        
-        let rootVC = SearchModuleBuilder.build()
+        let rootVC = SearchForSongModuleBuilder.build()
         let navVC = self.configuredNavigationController
         navVC.viewControllers = [rootVC]
         
         
         window?.rootViewController = navVC
         window?.makeKeyAndVisible()
-        
-   
-        
-        //        let rootVC = AppDetailViewController(app: app)
-        //        let navVC = self.configuredNavigationController
-        //        navVC.viewControllers = [rootVC]
-        
-        
-        
     }
     
     private lazy var configuredNavigationController: UINavigationController = {

@@ -8,9 +8,15 @@
 
 import UIKit
 
-final class AppCell: UITableViewCell {
+final class SongCell: UITableViewCell {
     
     // MARK: - Subviews
+    
+    private(set) lazy var artistArtwork: UIImageView = {
+       let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     private(set) lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -50,7 +56,7 @@ final class AppCell: UITableViewCell {
     
     // MARK: - Methods
     
-    func configure(with cellModel: AppCellModel) {
+    func configure(with cellModel: SongCellModel) {
         self.titleLabel.text = cellModel.title
         self.subtitleLabel.text = cellModel.subtitle
         self.ratingLabel.text = cellModel.rating
@@ -67,13 +73,6 @@ final class AppCell: UITableViewCell {
         self.addSubtitleLabel()
         self.addRatingLabel()
     }
-    
-//    private func addArtistArtwork() {
-//        self.contentView.addSubview(self.artwork)
-//        NSLayoutConstraint.activate([
-//            self.artwork.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8.0)
-//        ])
-//    }
     
     private func addTitleLabel() {
         self.contentView.addSubview(self.titleLabel)
